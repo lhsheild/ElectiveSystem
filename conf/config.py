@@ -1,0 +1,1 @@
+userinfo = r'E:\Projects\Python_Projects\ElectiveSystem\db\userinfo'
