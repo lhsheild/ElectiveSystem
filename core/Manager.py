@@ -1,6 +1,4 @@
 from conf.config import *
-from core.Teacher import Teacher
-
 
 
 class Manager():

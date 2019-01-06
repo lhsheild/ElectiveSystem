@@ -12,7 +12,7 @@ def login():
             username, password, role = line.strip().split('|')
             if username == usr and password == pwd:
                 print('\033[1;32m登录成功!\033[0m')
-                return {'username': username, 'role:': role}
+                return {'username': username, 'role': role}
         else:
             print('\033[1;32m登录失败!\033[0m')
 
