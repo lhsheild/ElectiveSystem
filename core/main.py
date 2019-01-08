@@ -24,7 +24,8 @@ def main():
     login_ret = login()  # {'username': lh, 'role:': Manager}
     '''用户对应视图,用户调用任何方法应通过角色对象调用'''
     if login_ret:
-        role_class = getattr(sys.modules[__name__], login_ret['role'])  # 已经将不同角色类(Manager...)导入本模块,因此可以根据login_ret中角色字符串反射到对应类
+        role_class = getattr(sys.modules[__name__], login_ret['role'])  # 已经将不同角色类(Manager...)导入本模块,
+        # 因此可以根据login_ret中角色字符串反射到对应类
         obj = role_class(login_ret['username'])  # 实例化对应类
         for i, j in enumerate(role_class.menu, 1):
             print(i, j[0])
