@@ -1,5 +1,5 @@
 class Teacher():
-    def __init__(self, name, classes, course):
+    def __init__(self, name, school):
         self.name = name
-        self.classed = ['class_object']
-        self.course = ['course_object']
+        self.school = school
+        self.classes= []

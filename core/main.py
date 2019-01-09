@@ -2,6 +2,7 @@ import sys
 
 from conf.config import *
 from core.Manager import Manager
+from core.Teacher import Teacher
 
 
 def login():
@@ -27,16 +28,17 @@ def main():
         role_class = getattr(sys.modules[__name__], login_ret['role'])  # 已经将不同角色类(Manager...)导入本模块,
         # 因此可以根据login_ret中角色字符串反射到对应类
         obj = role_class(login_ret['username'])  # 实例化对应类
-        for i, j in enumerate(role_class.menu, 1):
-            print(i, j[0])
-        try:
-            func_ret = int(input('输出操作符:'))
-            if hasattr(obj, role_class.menu[func_ret-1][1]):
-                getattr(obj, role_class.menu[func_ret-1][1])()
-            else:
-                print('没有该功能!')
-        except:
-            print('操作有误!')
+        while True:
+            for i, j in enumerate(role_class.menu, 1):
+                print(i, j[0])
+            try:
+                func_ret = int(input('输出操作符:'))
+                if hasattr(obj, role_class.menu[func_ret - 1][1]):
+                    getattr(obj, role_class.menu[func_ret - 1][1])()
+                else:
+                    print('没有该功能!')
+            except:
+                print('操作有误!')
 
 
 if __name__ == '__main__':

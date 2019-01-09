@@ -1,3 +1,10 @@
-userinfo = r'D:\Project\PythonProjects\ElectiveSystem\db\userinfo'
-schoolinfo = r'E:\Projects\Python_Projects\ElectiveSystem\db\schoolinfo'
-teacher_obj = r'E:\Projects\Python_Projects\ElectiveSystem\db\teacher_obj'
+import os
+
+
+local_path = os.path.dirname(os.getcwd())
+
+userinfo = os.path.abspath(os.path.join(local_path, 'db/userinfo'))
+schoolinfo = os.path.abspath(os.path.join(local_path, 'db/schoolinfo'))
+teacher_obj = os.path.abspath(os.path.join(local_path, 'db/teacher_obj'))
+classes_obj = os.path.abspath(os.path.join(local_path, 'db/classes_obj'))
+course_obj = os.path.abspath(os.path.join(local_path, 'db/course_obj'))
