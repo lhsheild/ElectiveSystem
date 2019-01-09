@@ -31,14 +31,14 @@ def main():
         while True:
             for i, j in enumerate(role_class.menu, 1):
                 print(i, j[0])
-            try:
-                func_ret = int(input('输出操作符:'))
-                if hasattr(obj, role_class.menu[func_ret - 1][1]):
-                    getattr(obj, role_class.menu[func_ret - 1][1])()
-                else:
-                    print('没有该功能!')
-            except:
-                print('操作有误!')
+            # try:
+            func_ret = int(input('输出操作符:'))
+            if hasattr(obj, role_class.menu[func_ret - 1][1]):
+                getattr(obj, role_class.menu[func_ret - 1][1])()
+            else:
+                print('没有该功能!')
+            # except:
+            #     print('操作有误!')
 
 
 if __name__ == '__main__':

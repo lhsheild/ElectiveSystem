@@ -20,13 +20,26 @@ class MyPickle():
                     break
 
     def edit(self, obj):  # 编辑pickle文件中的对象
-        for item in load_iter(self.file_path + '.bak'):
+        f2 = MyPickle(self.file_path+'.bak')
+        for item in self.load_iter():
             if item.name == obj.name:
-                dump(obj, self.file_path)
+                f2.dump(obj)
             else:
-                dump(item, self.file_path)
+                f2.dump(item)
         os.remove(self.file_path)
-        os.rename(self.file_path + '.bak', self.file_path)
+        os.rename(self.file_path+'.bak', self.file_path)
+
+    def load_obj(self):
+        obj_list = []
+        with open(self.file_path, 'rb') as f:
+            while True:
+                try:
+                    obj = pickle.load(f)
+                    obj_list.append()
+
+                except:
+                    return obj_list
+        return obj_list
 
 
 def dump(obj, file_path):  # 序列号pickle存入文件
